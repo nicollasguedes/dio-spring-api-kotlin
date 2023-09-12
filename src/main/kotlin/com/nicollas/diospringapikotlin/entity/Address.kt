@@ -7,11 +7,11 @@ import lombok.Data
 
 @Embeddable
 @Data
-class Address {
+class Address(
 
     @Column(nullable = false)
-    private val zipCode: String = ""
+    val zipCode: String = "",
 
     @Column(nullable = false)
-    private var street: String = ""
-}
+    var street: String = ""
+)
