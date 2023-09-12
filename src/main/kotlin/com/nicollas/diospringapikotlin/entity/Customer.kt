@@ -20,10 +20,10 @@ class Customer {
     @Column(nullable = false)
     private var lastName: String = ""
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private val cpf: String = ""
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private var email: String = ""
 
     @Column(nullable = false)
