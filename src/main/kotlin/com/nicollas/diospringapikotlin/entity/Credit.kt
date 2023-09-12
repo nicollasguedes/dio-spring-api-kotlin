@@ -11,30 +11,31 @@ import java.util.*
 @Entity
 @Table(name = "Credit")
 @Data
+
 class Credit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, unique = true)
-    private val id: Long? = null
+    val id: Long? = null
 
     @Column(nullable = false)
-    private val email: String = ""
+    val email: String = ""
 
     @Column(nullable = false, unique = true)
-    private val creditCode: UUID = UUID.randomUUID()
+    val creditCode: UUID = UUID.randomUUID()
 
     @Column(nullable = false)
-    private val creditValue: BigDecimal = BigDecimal.ZERO
+    val creditValue: BigDecimal = BigDecimal.ZERO
 
     @Column(nullable = false)
-    private val dayFirstInstallment: LocalDate? = null
+    val dayFirstInstallment: LocalDate? = null
 
     @Column(nullable = false)
     @Enumerated
     @Embedded
-    private val status: Status = Status.IN_PROGRESS
+    val status: Status = Status.IN_PROGRESS
 
     @ManyToOne
-    private val customer: Customer? = null
+    var customer: Customer? = null
 }

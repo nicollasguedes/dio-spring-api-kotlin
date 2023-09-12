@@ -12,22 +12,22 @@ class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, unique = true)
-    private val id: Long? = null
+    val id: Long? = null
 
     @Column(nullable = false)
-    private var firstName: String = ""
+    var firstName: String = ""
 
     @Column(nullable = false)
-    private var lastName: String = ""
+    var lastName: String = ""
 
     @Column(nullable = false, unique = true)
-    private val cpf: String = ""
+    val cpf: String = ""
 
     @Column(nullable = false, unique = true)
-    private var email: String = ""
+    var email: String = ""
 
     @Column(nullable = false)
-    private var password: String = ""
+    var password: String = ""
 
     @Column(nullable = false)
     @OneToMany(fetch = FetchType.LAZY, cascade = [CascadeType.REMOVE], mappedBy = "customer")
